@@ -1,3 +1,5 @@
+import * as todoPage from "../page-objects/todo-page";
+
 describe("todomvc testing", () => {
   it("Just select the input ", () => {
     const task = "Clean room";
@@ -41,12 +43,12 @@ describe("todomvc grouped tests", () => {
   const task = "Clean room";
 
   beforeEach(() => {
-    cy.visit("https://todomvc-app-for-testing.surge.sh/");
-    cy.get(".new-todo").type(task + "{enter}");
+    todoPage.navigate();
+    todoPage.addTodo(task);
   });
 
   it.only("should add a new todo to the list ", () => {
-    cy.get("label").should("have.text", task);
+    todoPage.validateTodoText(0, task);
     cy.get(".toggle").should("not.be.checked");
   });
 
