@@ -9,6 +9,7 @@ module.exports = defineConfig({
     timestamp: "longDate",
   },
   e2e: {
+    watchForFileChanges: false,
     setupNodeEvents(on, config) {
       on("task", {
         log(message) {
