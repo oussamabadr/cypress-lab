@@ -1,13 +1,6 @@
 const { defineConfig } = require("cypress");
 
 module.exports = defineConfig({
-  reporter: "mochawesome",
-  reporterOptions: {
-    reportFilename: "[status]_[datetime]-[name]-report",
-    charts: true,
-    json: false,
-    timestamp: "longDate",
-  },
   e2e: {
     watchForFileChanges: false,
     setupNodeEvents(on, config) {
