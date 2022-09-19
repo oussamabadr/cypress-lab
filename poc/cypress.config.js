@@ -3,7 +3,7 @@ const { defineConfig } = require("cypress");
 module.exports = defineConfig({
   e2e: {
     watchForFileChanges: false,
-    setupNodeEvents(on, config) {
+    setupNodeEvents(on, _) {
       on("task", {
         log(message) {
           console.log(message);
